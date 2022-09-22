@@ -1,6 +1,6 @@
 package com.una.proyecto3_progra3.model.departamento;
 
-import com.una.proyecto3_progra3.model.Persona;
+import com.una.proyecto3_progra3.model.persona.Persona;
 
 public class Departamento {
     private String codigo;

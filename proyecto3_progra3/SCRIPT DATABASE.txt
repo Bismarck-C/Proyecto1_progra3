@@ -1,0 +1,26 @@
+CREATE DATABASE IF NOT EXISTS proyecto_1 DEFAULT CHARACTER SET UTF8 COLLATE UTF8_GENERAL_CI;
+USE proyecto_1;
+
+CREATE TABLE usuario(
+    id varchar(11) NOT NULL,
+    nombre varchar(25) NOT NULL,
+    apellidos varchar(40) NOT NULL,
+    telefono varchar(12) NOT NULL,
+    correo varchar(50) NOT NULL,
+    usuario varchar(25) NOT NULL,
+    contraseña varchar(25) NOT NULL
+)ENGINE INNODB DEFAULT CHARSET=UTF8;
+
+CREATE TABLE departamento(
+    codigo varchar(25) NOT NULL,
+    nombre varchar(25) NOT NULL,
+    ubicacion varchar(50) NOT NULL,
+    telefono varchar(12) NOT NULL,
+    correo varchar(50) NOT NULL,
+    encargado_id int(11) NOT NULL,
+    encargado_nombre varchar(25) NOT NULL,
+    encargado_apellidos varchar(40) NOT NULL,
+    encargado_telefono varchar(12) NOT NULL,
+    encargado_correo varchar(50) NOT NULL
+)ENGINE INNODB DEFAULT CHARSET=UTF8;
+ALTER TABLE departamento ADD PRIMARY KEY(codigo);
