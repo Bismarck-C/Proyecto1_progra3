@@ -46,4 +46,9 @@ public class UsuarioDAO extends ConnectionDB{
         sqlString ="SELECT * FROM usuario WHERE id ='"+id+"'";
         return this.query(sqlString);
     }
+    
+    public ResultSet getAll() throws Exception{
+        sqlString ="SELECT * FROM usuario";
+        return this.query(sqlString);
+    }
 }

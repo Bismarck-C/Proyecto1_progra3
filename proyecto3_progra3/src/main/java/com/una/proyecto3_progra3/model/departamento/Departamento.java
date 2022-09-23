@@ -1,6 +1,7 @@
 package com.una.proyecto3_progra3.model.departamento;
 
-import com.una.proyecto3_progra3.model.persona.Persona;
+import com.una.proyecto3_progra3.model.encargado.Encargado;
+
 
 public class Departamento {
     private String codigo;
@@ -8,7 +9,7 @@ public class Departamento {
     private String ubicacion;
     private String email;
     private String telefono;
-    private Persona encargado;
+    private Encargado encargado;
 
     public Departamento(String[] data){
         this.codigo = data[0];
@@ -16,11 +17,6 @@ public class Departamento {
         this.ubicacion = data[2];
         this.telefono = data[3];
         this.email = data[4];
-        this.encargado.setId(data[5]);
-        this.encargado.setNombre(data[6]);
-        this.encargado.setApellidos(data[7]);
-        this.encargado.setTelefono(data[8]);
-        this.encargado.setEmail(data[9]);
     }
     
     public String getCodigo() {
@@ -64,11 +60,11 @@ public class Departamento {
         
     }
 
-    public Persona getEncargado() {
+    public Encargado getEncargado() {
         return encargado;
     }
 
-    public void setEncargado(Persona _encargado) {
+    public void setEncargado(Encargado _encargado) {
         this.encargado = _encargado;
     }
     
