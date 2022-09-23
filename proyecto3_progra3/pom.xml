@@ -43,6 +43,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
-        <exec.mainClass>com.una.proyecto3_progra3.Proyecto3_progra3</exec.mainClass>
+        <exec.mainClass>com.una.proyecto3_progra3.main</exec.mainClass>
     </properties>
 </project>

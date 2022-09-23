@@ -10,6 +10,16 @@ CREATE TABLE usuario(
     usuario varchar(25) NOT NULL,
     contraseña varchar(25) NOT NULL
 )ENGINE INNODB DEFAULT CHARSET=UTF8;
+ALTER TABLE usuario ADD PRIMARY KEY(id);
+
+CREATE TABLE encargado(
+    id varchar(11) NOT NULL,
+    nombre varchar(25) NOT NULL,
+    apellidos varchar(40) NOT NULL,
+    telefono varchar(12) NOT NULL,
+    correo varchar(50) NOT NULL
+)ENGINE INNODB DEFAULT CHARSET=UTF8;
+ALTER TABLE encargado ADD PRIMARY KEY(id);
 
 CREATE TABLE departamento(
     codigo varchar(25) NOT NULL,
@@ -17,10 +27,10 @@ CREATE TABLE departamento(
     ubicacion varchar(50) NOT NULL,
     telefono varchar(12) NOT NULL,
     correo varchar(50) NOT NULL,
-    encargado_id int(11) NOT NULL,
-    encargado_nombre varchar(25) NOT NULL,
-    encargado_apellidos varchar(40) NOT NULL,
-    encargado_telefono varchar(12) NOT NULL,
-    encargado_correo varchar(50) NOT NULL
+    id_encargado varchar(11) NOT NULL
 )ENGINE INNODB DEFAULT CHARSET=UTF8;
-ALTER TABLE departamento ADD PRIMARY KEY(codigo);
+ALTER TABLE departamento ADD PRIMARY KEY(codigo), ADD KEY id_encargado_fk(id_ENCARGADO);
+ALTER TABLE departamento ADD CONSTRAINT id_encargado_fk FOREING KEY(id_encargado) REFERENCES encargado (id);
+
+
+
