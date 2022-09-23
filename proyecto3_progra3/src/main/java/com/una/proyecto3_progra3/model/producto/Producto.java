@@ -4,10 +4,17 @@
  */
 package com.una.proyecto3_progra3.model.producto;
 
+import com.una.proyecto3_progra3.model.bloque.Bloque;
+
 /**
  *
  * @author villa
  */
 public class Producto {
+  
+        
     
 }
+   
+ 
+
