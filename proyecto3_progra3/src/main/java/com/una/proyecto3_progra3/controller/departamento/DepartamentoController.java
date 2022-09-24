@@ -68,7 +68,7 @@ public class DepartamentoController implements DepartamentoInterface{
            EncargadoDAO dao = new EncargadoDAO();
            String[] data = new String[5];
            ResultSet rs = dao.verifyExist(id);
-           while(rs.next()){
+           if(rs.next()){
                 data[0] = rs.getString(1);
                 data[1] = rs.getString(2);
                 data[2] = rs.getString(3);
@@ -91,7 +91,7 @@ public class DepartamentoController implements DepartamentoInterface{
            DepartamentoDAO dao = new DepartamentoDAO();
            String[] data = new String[5];
            ResultSet rs = dao.verifyExist(id);
-           while(rs.next()){
+           if(rs.next()){
                 data[0] = rs.getString(1);
                 data[1] = rs.getString(2);
                 data[2] = rs.getString(3);
