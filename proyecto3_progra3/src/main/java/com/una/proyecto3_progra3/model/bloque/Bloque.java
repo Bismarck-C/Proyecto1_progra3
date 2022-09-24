@@ -9,26 +9,31 @@ package com.una.proyecto3_progra3.model.bloque;
  * @author villa
  */
 public class Bloque {
+    private String codigo;
     private String nombre;
     private String estado;
 
-    /**
-     * @return the nombre
-     */
-    public Bloque(String[] data){
-        this.nombre = data[0];
-        this.estado = data[1];
-    }
+   
+    public Bloque(){
     
-    public String getNombre() {
-        return nombre;
+    }
+    public Bloque(String[] data){
+        this.codigo = data[0];
+        this.nombre = data[1];
+        this.estado = data[2];
+    }
+     /**
+     * @return the codigo
+     */
+    public String getCodigo() {
+        return codigo;
     }
 
     /**
-     * @param nombre the nombre to set
+     * @param codigo the codigo to set
      */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     /**
@@ -43,6 +48,20 @@ public class Bloque {
      */
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
 }

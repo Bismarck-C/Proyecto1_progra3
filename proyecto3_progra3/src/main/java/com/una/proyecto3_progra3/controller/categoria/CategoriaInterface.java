@@ -4,16 +4,18 @@
  */
 package com.una.proyecto3_progra3.controller.categoria;
 
+import com.una.proyecto3_progra3.model.categoria.Categoria;
+
 /**
  *
  * @author villa
  */
 public interface CategoriaInterface {
     public boolean insertar(String[] data, String[] data1);
-    public void modificar(String[] data);
-    public void buscarCategoria(String data);
+    public String modificar(String[] data);
+    public Categoria buscarCategoria(String data);
     public void buscarDescipcion(String data);
-    public void delete(String data);
+    public String delete(String data);
     
         
         
