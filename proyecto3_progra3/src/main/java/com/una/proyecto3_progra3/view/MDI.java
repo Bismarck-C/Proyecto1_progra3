@@ -5,6 +5,7 @@
 package com.una.proyecto3_progra3.view;
 
 import com.una.proyecto3_progra3.view.usuario.frmAgregarUsuario;
+import com.una.proyecto3_progra3.view.usuario.frmMostrar;
 import java.awt.Dimension;
 
 /**
@@ -14,10 +15,14 @@ import java.awt.Dimension;
 public class MDI extends javax.swing.JFrame {
 
     frmAgregarUsuario frmAgregarU;
+    frmMostrar frmMostrarU;
     public MDI() {
         frmAgregarU = new frmAgregarUsuario();
+        frmMostrarU = new frmMostrar();
         initComponents();
         this.desktopPane.add(frmAgregarU);
+        this.desktopPane.add(frmMostrarU);
+        
     }
 
     /**
@@ -31,11 +36,11 @@ public class MDI extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         menuAgregar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
-        openMenuItem = new javax.swing.JMenuItem();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
-        exitMenuItem = new javax.swing.JMenuItem();
+        userMenu = new javax.swing.JMenu();
+        addMenuItem = new javax.swing.JMenuItem();
+        updateMenuItem = new javax.swing.JMenuItem();
+        deletMenuItem = new javax.swing.JMenuItem();
+        mostrarMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
         copyMenuItem = new javax.swing.JMenuItem();
@@ -47,37 +52,35 @@ public class MDI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("User");
+        userMenu.setMnemonic('f');
+        userMenu.setText("Administracion de Usuarios");
 
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Open");
-        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        addMenuItem.setMnemonic('o');
+        addMenuItem.setText("Agregar");
+        addMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openMenuItemActionPerformed(evt);
+                addMenuItemActionPerformed(evt);
             }
         });
-        fileMenu.add(openMenuItem);
+        userMenu.add(addMenuItem);
 
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Save");
-        fileMenu.add(saveMenuItem);
+        updateMenuItem.setMnemonic('s');
+        updateMenuItem.setText("Modificar");
+        userMenu.add(updateMenuItem);
 
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Save As ...");
-        saveAsMenuItem.setDisplayedMnemonicIndex(5);
-        fileMenu.add(saveAsMenuItem);
+        deletMenuItem.setMnemonic('a');
+        deletMenuItem.setText("Eliminar");
+        userMenu.add(deletMenuItem);
 
-        exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Exit");
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        mostrarMenuItem.setText("Mostrar");
+        mostrarMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
+                mostrarMenuItemActionPerformed(evt);
             }
         });
-        fileMenu.add(exitMenuItem);
+        userMenu.add(mostrarMenuItem);
 
-        menuAgregar.add(fileMenu);
+        menuAgregar.add(userMenu);
 
         editMenu.setMnemonic('e');
         editMenu.setText("Edit");
@@ -129,30 +132,31 @@ public class MDI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_exitMenuItemActionPerformed
-
-    private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
+    private void addMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMenuItemActionPerformed
         frmAgregarU.setVisible(true);
-    }//GEN-LAST:event_openMenuItemActionPerformed
+    }//GEN-LAST:event_addMenuItemActionPerformed
+
+    private void mostrarMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarMenuItemActionPerformed
+        frmMostrarU.setVisible(true);
+        frmMostrarU.listar();
+    }//GEN-LAST:event_mostrarMenuItemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JMenuItem addMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
+    private javax.swing.JMenuItem deletMenuItem;
     private javax.swing.JMenuItem deleteMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
-    private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenuBar menuAgregar;
-    private javax.swing.JMenuItem openMenuItem;
+    private javax.swing.JMenuItem mostrarMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
-    private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JMenuItem updateMenuItem;
+    private javax.swing.JMenu userMenu;
     // End of variables declaration//GEN-END:variables
 
 }

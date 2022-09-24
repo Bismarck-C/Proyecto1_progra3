@@ -31,8 +31,19 @@ public class EncargadoDAO extends ConnectionDB{
         return this.update(sqlString);
     }
      
-    public ResultSet verifyExist(String id) throws Exception{
+    public Encargado verifyExist(String id) throws Exception{
         sqlString ="SELECT * FROM encargado WHERE id ='"+id+"'";
-        return this.query(sqlString);
+        ResultSet rs = this.query(sqlString);
+        Encargado encargado = null;
+        if(rs.next()){
+            encargado = this.createEncargado(rs);
+        }
+        return encargado;
+    }
+    
+    private Encargado createEncargado(ResultSet rs) throws SQLException{
+        String[] data = {rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)};
+        Encargado encargado = new Encargado(data);
+        return encargado;
     }
 }

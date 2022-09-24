@@ -85,24 +85,21 @@ public class UsuarioController implements UsuarioInterface{
     }
 
     @Override
-    public ArrayList<Usuario> getAll() {
+    public ArrayList getAll() {
         try{
             UsuarioDAO dao = new UsuarioDAO();
-            ArrayList<Usuario> list = new ArrayList<>();
-            ResultSet rs = dao.getAll();
-            while(rs.next()){
-                String[] data = new String[7];
-                data[0] = rs.getString(1);
-                data[1] = rs.getString(2);
-                data[2] = rs.getString(3);
-                data[3] = rs.getString(4);
-                data[4] = rs.getString(5);
-                data[5] = rs.getString(6);
-                data[6] = rs.getString(7);
-                Usuario usuario = new Usuario(data);
-                list.add(usuario);
+            ArrayList<Usuario> list = dao.getAll();
+            String[][] data = new String[list.size()][7];
+            for(int i = 0; i < list.size(); i++){
+                Usuario user = list.get(i);
+                data[i][0] = user.getId();
+                data[i][1] = user.getNombre();
+                data[i][2] = user.getApellidos();
+                data[i][3] = user.getEmail();
+                data[i][4] = user.getTelefono();
+                data[i][5] = user.getUsuario();
+                data[i][6] = user.getContraseña();
             }
-            rs.close();
             return list;
         }catch(Exception ex){
             ex.printStackTrace();

@@ -17,5 +17,5 @@ public interface DepartamentoInterface {
     public boolean updateDepartamento(String id_departamento, Encargado encargado, String[] data);
     public Encargado getEncargado(String id);
     public Departamento getDepartamento(String id);
-    public ArrayList<Departamento> getAll();
+    public String[][] getAll();
 }

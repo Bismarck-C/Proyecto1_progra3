@@ -21,6 +21,7 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
         initComponents();
         //((javax.swing.plaf.basic.BasicInternalFrameUI)this.getUI()).setNorthPane(null);
         
+        
     }
 
     /**
@@ -64,6 +65,11 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
         setVisible(false);
 
         jPanel1.setBackground(java.awt.Color.white);
+        jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel1MouseEntered(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         jLabel1.setText("INGRESO DE USUARIO AL SISTEMA");
@@ -108,6 +114,11 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
                 btnCancelarMouseExited(evt);
             }
         });
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         txtId.setForeground(java.awt.Color.lightGray);
         txtId.setText("Digite su identificacion");
@@ -120,6 +131,11 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
         txtId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIdActionPerformed(evt);
+            }
+        });
+        txtId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtIdKeyTyped(evt);
             }
         });
 
@@ -136,6 +152,11 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
                 txtNombreActionPerformed(evt);
             }
         });
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
 
         txtTelefono.setForeground(java.awt.Color.lightGray);
         txtTelefono.setText("Digite su telefono");
@@ -148,6 +169,11 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefonoActionPerformed(evt);
+            }
+        });
+        txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoKeyTyped(evt);
             }
         });
 
@@ -164,6 +190,11 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
                 txtApellidosActionPerformed(evt);
             }
         });
+        txtApellidos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellidosKeyTyped(evt);
+            }
+        });
 
         txtCorreo.setForeground(java.awt.Color.lightGray);
         txtCorreo.setText("Digite su correo electronico");
@@ -178,9 +209,14 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
                 txtCorreoActionPerformed(evt);
             }
         });
+        txtCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCorreoKeyTyped(evt);
+            }
+        });
 
         txtUsuario.setForeground(java.awt.Color.lightGray);
-        txtUsuario.setText("Digite su identificacion");
+        txtUsuario.setText("Digite su usuario");
         txtUsuario.setBorder(null);
         txtUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -190,6 +226,11 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsuarioActionPerformed(evt);
+            }
+        });
+        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyTyped(evt);
             }
         });
 
@@ -204,6 +245,11 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
+            }
+        });
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyTyped(evt);
             }
         });
 
@@ -265,9 +311,9 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtApellidos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -306,13 +352,19 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAceptarMouseClicked
-        String contraseña = new String(txtPassword.getPassword());
-        String usuario = this.txtUsuario.getText();
-        String[] data = {this.txtId.getText(),this.txtNombre.getText(),this.txtApellidos.getText(),this.txtTelefono.getText(),this.txtCorreo.getText(),usuario, contraseña};
-        if(userController.addUser(data)){
-            JOptionPane.showMessageDialog(this,"Agregado correctamente");
-        }else{
-            JOptionPane.showMessageDialog(this, "Error al agregar el usuario","Error",JOptionPane.ERROR_MESSAGE);
+        if(!this.txtId.getText().startsWith("D")){
+            String contraseña = new String(txtPassword.getPassword());
+            String usuario = this.txtUsuario.getText();
+            String[] data = {this.txtId.getText(),this.txtNombre.getText(),this.txtApellidos.getText(),this.txtTelefono.getText(),this.txtCorreo.getText(),usuario, contraseña};
+            if(userController.addUser(data)){
+                JOptionPane.showMessageDialog(this,"Agregado correctamente");
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Error al agregar el usuario","Error",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Sea necio","Error",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAceptarMouseClicked
 
@@ -330,7 +382,7 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
-        System.exit(0);
+        this.setVisible(false);
     }//GEN-LAST:event_btnCancelarMouseClicked
 
     private void btnCancelarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseEntered
@@ -343,7 +395,7 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCancelarMouseExited
 
     private void txtIdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtIdMouseClicked
-        if(this.txtId.getText().equals("Ingrese su nombre de usuario")){
+        if(this.txtId.getText().equals("Digite su identificacion")){
             this.txtId.setText("");
             this.txtId.setForeground(Color.black);
         }
@@ -354,7 +406,10 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
-        // TODO add your handling code here:
+        if(this.txtNombre.getText().equals("Digite su nombre")){
+            this.txtNombre.setText("");
+            this.txtNombre.setForeground(Color.black);
+        }
     }//GEN-LAST:event_txtNombreMouseClicked
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
@@ -362,7 +417,10 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void txtTelefonoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTelefonoMouseClicked
-        // TODO add your handling code here:
+        if(this.txtTelefono.getText().equals("Digite su telefono")){
+            this.txtTelefono.setText("");
+            this.txtTelefono.setForeground(Color.black);
+        }
     }//GEN-LAST:event_txtTelefonoMouseClicked
 
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
@@ -370,7 +428,10 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtTelefonoActionPerformed
 
     private void txtApellidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtApellidosMouseClicked
-        // TODO add your handling code here:
+        if(this.txtApellidos.getText().equals("Digite sus apellidos")){
+            this.txtApellidos.setText("");
+            this.txtApellidos.setForeground(Color.black);
+        }
     }//GEN-LAST:event_txtApellidosMouseClicked
 
     private void txtApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidosActionPerformed
@@ -378,7 +439,10 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtApellidosActionPerformed
 
     private void txtCorreoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCorreoMouseClicked
-        // TODO add your handling code here:
+        if(this.txtCorreo.getText().equals("Digite su correo electronico")){
+            this.txtCorreo.setText("");
+            this.txtCorreo.setForeground(Color.black);
+        }
     }//GEN-LAST:event_txtCorreoMouseClicked
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
@@ -386,7 +450,10 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtCorreoActionPerformed
 
     private void txtUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUsuarioMouseClicked
-        // TODO add your handling code here:
+        if(this.txtUsuario.getText().equals("Digite su usuario")){
+            this.txtUsuario.setText("");
+            this.txtUsuario.setForeground(Color.black);
+        }
     }//GEN-LAST:event_txtUsuarioMouseClicked
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
@@ -404,6 +471,92 @@ public class frmAgregarUsuario extends javax.swing.JInternalFrame {
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
 
     }//GEN-LAST:event_txtPasswordActionPerformed
+
+    private void txtIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyTyped
+        if(this.txtId.getText().equals("Digite su identificacion")){
+            this.txtId.setText("");
+            this.txtId.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtIdKeyTyped
+
+    private void jPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseEntered
+        String contraseña = new String(txtPassword.getPassword());
+        if(this.txtId.getText().isBlank()){
+            this.txtId.setText("Digite su identificacion");
+            this.txtId.setForeground(Color.LIGHT_GRAY);
+        }
+        if(this.txtNombre.getText().isBlank()){
+            this.txtNombre.setText("Digite su nombre");
+            this.txtNombre.setForeground(Color.LIGHT_GRAY);
+        }
+        if(this.txtApellidos.getText().isBlank()){
+            this.txtApellidos.setText("Digite sus apellidos");
+            this.txtApellidos.setForeground(Color.LIGHT_GRAY);
+        }
+        if(this.txtCorreo.getText().isBlank()){
+            this.txtCorreo.setText("Digite su email");
+            this.txtCorreo.setForeground(Color.LIGHT_GRAY);
+        }
+        if(this.txtTelefono.getText().isBlank()){
+            this.txtTelefono.setText("Digite su telefono");
+            this.txtTelefono.setForeground(Color.LIGHT_GRAY);
+        }
+        if(this.txtUsuario.getText().isBlank()){
+            this.txtUsuario.setText("Digite su usuario");
+            this.txtUsuario.setForeground(Color.LIGHT_GRAY);
+        }
+        if(contraseña.isBlank()){
+            this.txtPassword.setText("12345678");
+            this.txtPassword.setForeground(Color.LIGHT_GRAY);
+        }
+    }//GEN-LAST:event_jPanel1MouseEntered
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        if(this.txtNombre.getText().equals("Digite su nombre")){
+            this.txtNombre.setText("");
+            this.txtNombre.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellidosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidosKeyTyped
+        if(this.txtApellidos.getText().equals("Digite sus apellidos")){
+            this.txtApellidos.setText("");
+            this.txtApellidos.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtApellidosKeyTyped
+
+    private void txtTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoKeyTyped
+        if(this.txtTelefono.getText().equals("Digite su telefono")){
+            this.txtTelefono.setText("");
+            this.txtTelefono.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtTelefonoKeyTyped
+
+    private void txtCorreoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyTyped
+        if(this.txtCorreo.getText().equals("Digite su correo electronico")){
+            this.txtCorreo.setText("");
+            this.txtCorreo.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtCorreoKeyTyped
+
+    private void txtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyTyped
+        if(this.txtUsuario.getText().equals("Digite su usuario")){
+            this.txtUsuario.setText("");
+            this.txtUsuario.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtUsuarioKeyTyped
+
+    private void txtPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyTyped
+        String contraseña = new String(txtPassword.getPassword());
+        if(contraseña.equals("12345678")){
+            this.txtPassword.setText("");
+            this.txtPassword.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtPasswordKeyTyped
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

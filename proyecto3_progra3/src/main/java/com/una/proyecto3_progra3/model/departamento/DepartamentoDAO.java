@@ -5,8 +5,10 @@
 package com.una.proyecto3_progra3.model.departamento;
 
 import com.una.proyecto3_progra3.model.ConnectionDB;
+import com.una.proyecto3_progra3.model.encargado.EncargadoDAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 /**
@@ -36,14 +38,34 @@ public class DepartamentoDAO extends ConnectionDB{
         return this.update(sqlString);
     }
     
-    public ResultSet verifyExist(String id) throws Exception{
+    public Departamento verifyExist(String id) throws Exception{
+        Departamento departamento = null;
         sqlString ="SELECT * FROM departamento WHERE codigo ='"+id+"'";
-        return this.query(sqlString);
+        ResultSet rs = this.query(sqlString);
+        if(rs.next()){
+            departamento = this.createDepartamaneto(rs);
+        }
+        return departamento;
     }
     
-    public ResultSet getALL() throws Exception{
+    public ArrayList getALL() throws Exception{
         sqlString ="SELECT * FROM departamento";
-        return this.query(sqlString);
+        ArrayList<Departamento> list = new ArrayList<>();
+        ResultSet rs = this.query(sqlString);
+        while(rs.next()){
+            Departamento departamento = this.createDepartamaneto(rs);
+            list.add(departamento);
+        }
+        return list;
+    }
+    
+    private Departamento createDepartamaneto(ResultSet rs) throws Exception{
+        Departamento departamento = null;
+        String[] data = {rs.getString("codigo"),rs.getString("nombre"),rs.getString("ubicacion"),rs.getString("telefono"),rs.getString("correo")};
+        departamento = new Departamento(data);
+        EncargadoDAO dao = new EncargadoDAO();
+        departamento.setEncargado(dao.verifyExist(rs.getString("id_encargado")));
+        return departamento;
     }
     
 }

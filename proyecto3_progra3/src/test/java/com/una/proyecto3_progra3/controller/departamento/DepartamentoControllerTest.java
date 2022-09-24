@@ -34,11 +34,8 @@ public class DepartamentoControllerTest {
     public void testGetAll(){
         boolean as = false;
         DepartamentoController dController = new DepartamentoController();
-        ArrayList<Departamento> list = dController.getAll();
-        for(int i = 0; i < list.size(); i++){
-            System.out.println("Codigo: "+list.get(i).getCodigo()+"  "+"Encargado: "+list.get(i).getEncargado().getNombre());
-            as = true;
-        }
+        Departamento dp = dController.getDepartamento("S5");
+        if(dp != null){as = true;};
         assertEquals(true, as);
     }
 }
