@@ -5,6 +5,8 @@
 
 package com.una.proyecto3_progra3;
 
+import com.una.proyecto3_progra3.view.frmLogin;
+
 /**
  *
  * @author villa
@@ -12,6 +14,7 @@ package com.una.proyecto3_progra3;
 public class main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        frmLogin login = new frmLogin();
+        login.setVisible(true);
     }
 }
