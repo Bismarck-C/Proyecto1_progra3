@@ -11,6 +11,9 @@ import com.una.proyecto3_progra3.model.bloque.Bloque;
  * @author villa
  */
 public interface BloqueInterface {
-    public boolean insertBloque(Bloque bloque);
+    public boolean insertBloque(String[] data);
+    public boolean modificarBloque(String[] data);
+    public boolean cambiarEstado(String[] estado);
+     
     
 }

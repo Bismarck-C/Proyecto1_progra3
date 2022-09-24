@@ -24,6 +24,10 @@ public class Categoria {
     
     }
 
+    public Categoria() {
+       
+    }
+
     /**
      * @return the codigo
      */
