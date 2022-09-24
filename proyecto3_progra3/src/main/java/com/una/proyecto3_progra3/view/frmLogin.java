@@ -42,10 +42,16 @@ public class frmLogin extends javax.swing.JFrame {
         pnlContainer.setBackground(new java.awt.Color(255, 255, 255));
         pnlContainer.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.lightGray, java.awt.Color.lightGray, java.awt.Color.lightGray));
         pnlContainer.setForeground(new java.awt.Color(247, 247, 211));
+        pnlContainer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlContainerMouseEntered(evt);
+            }
+        });
 
         txtUser.setForeground(java.awt.Color.lightGray);
         txtUser.setText("Ingrese su nombre de usuario");
         txtUser.setBorder(null);
+        txtUser.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtUserMouseClicked(evt);
@@ -54,6 +60,11 @@ public class frmLogin extends javax.swing.JFrame {
         txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUserActionPerformed(evt);
+            }
+        });
+        txtUser.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUserKeyTyped(evt);
             }
         });
 
@@ -77,7 +88,7 @@ public class frmLogin extends javax.swing.JFrame {
         txtTitulo.setText("INICIO DE SESION");
 
         lblPass.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        lblPass.setText("CONTRASENA");
+        lblPass.setText("CONTRASEÑA");
 
         lblUser.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lblUser.setText("USUARIO");
@@ -255,6 +266,25 @@ public class frmLogin extends javax.swing.JFrame {
     private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_btnCancelarMouseClicked
+
+    private void pnlContainerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlContainerMouseEntered
+        String contraseña = new String(txtPassword.getPassword());
+        if(this.txtUser.getText().isBlank()){
+            this.txtUser.setText("Ingrese su nombre de usuario");
+            this.txtUser.setForeground(Color.LIGHT_GRAY);
+        }
+        if(contraseña.isBlank()){
+            this.txtPassword.setText("12345678");
+            this.txtPassword.setForeground(Color.LIGHT_GRAY);
+        }
+    }//GEN-LAST:event_pnlContainerMouseEntered
+
+    private void txtUserKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUserKeyTyped
+        if(this.txtUser.getText().equals("Ingrese su nombre de usuario")){
+            this.txtUser.setText("");
+            this.txtUser.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtUserKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;

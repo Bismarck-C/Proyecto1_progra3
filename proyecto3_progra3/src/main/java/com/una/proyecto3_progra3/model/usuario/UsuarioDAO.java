@@ -5,7 +5,9 @@
 package com.una.proyecto3_progra3.model.usuario;
 
 import com.una.proyecto3_progra3.model.ConnectionDB;
+import com.una.proyecto3_progra3.model.departamento.Departamento;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 /**
  *
  * @author Dylan M
@@ -47,8 +49,21 @@ public class UsuarioDAO extends ConnectionDB{
         return this.query(sqlString);
     }
     
-    public ResultSet getAll() throws Exception{
+    public ArrayList getAll() throws Exception{
         sqlString ="SELECT * FROM usuario";
-        return this.query(sqlString);
+        ArrayList<Usuario> list = new ArrayList<>();
+        ResultSet rs = this.query(sqlString);
+        while(rs.next()){
+            Usuario usuario = this.createDepartamaneto(rs);
+            list.add(usuario);
+        }
+        return list;
+    }
+    
+    private Usuario createDepartamaneto(ResultSet rs) throws Exception{
+        Usuario usuario = null;
+        String[] data = {rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7)};
+        usuario = new Usuario(data);
+        return usuario;
     }
 }
