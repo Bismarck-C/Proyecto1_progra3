@@ -11,7 +11,7 @@ public class ConnectionDB {
     private final String driver="com.mysql.cj.jdbc.Driver";
     private final String connString=
             "jdbc:mysql://localhost/proyecto_1?user=root&password=";
-    private Connection con=null;
+    private static Connection con=null;
     
     public ConnectionDB() throws SQLException{
         this.con=DriverManager.getConnection(connString);

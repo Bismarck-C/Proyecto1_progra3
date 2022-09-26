@@ -57,6 +57,23 @@ public class UsuarioController implements UsuarioInterface{
     }
 
     @Override
+    public Usuario getById(String id) {
+        try{
+            UsuarioDAO dao = new UsuarioDAO();
+            ResultSet rs = dao.verifyExist(id);
+            Usuario user = null;
+            if(rs.next()){
+                String[] data = {rs.getString("id"),rs.getString("nombre"),rs.getString("apellidos"),rs.getString("telefono"),rs.getString("correo"),rs.getString("usuario"),rs.getString("contraseña")};
+                user = new Usuario(data);
+            }
+            return user;
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    
+    @Override
     public boolean deleteUser(String id) {
         try{
             if(this.verifyExist(id)){

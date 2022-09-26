@@ -5,6 +5,7 @@
 
 package com.una.proyecto3_progra3;
 
+import com.una.proyecto3_progra3.view.FrmMain;
 import com.una.proyecto3_progra3.view.frmLogin;
 
 /**
@@ -14,7 +15,8 @@ import com.una.proyecto3_progra3.view.frmLogin;
 public class main {
 
     public static void main(String[] args) {
-        frmLogin login = new frmLogin();
+        FrmMain login = new FrmMain();
         login.setVisible(true);
+       
     }
 }
