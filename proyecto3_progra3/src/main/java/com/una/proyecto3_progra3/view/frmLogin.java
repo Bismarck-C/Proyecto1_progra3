@@ -70,7 +70,6 @@ public class frmLogin extends javax.swing.JFrame {
 
         txtPassword.setForeground(java.awt.Color.lightGray);
         txtPassword.setText("12345678");
-
         txtPassword.setBorder(null);
         txtPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -80,6 +79,11 @@ public class frmLogin extends javax.swing.JFrame {
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
+            }
+        });
+        txtPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPasswordKeyTyped(evt);
             }
         });
 
@@ -220,7 +224,7 @@ public class frmLogin extends javax.swing.JFrame {
         String usuario = this.txtUser.getText();
         if(userController.verifyLogin(usuario, contraseña)){
             JOptionPane.showMessageDialog(this,"Inicio de sesión exitoso");
-            new MDI().setVisible(true);
+            new FrmMain().setVisible(true);
         }else{
             JOptionPane.showMessageDialog(this, "Usuario y/o contraseña invalida!! Le quedan intentos!!","Error",JOptionPane.ERROR_MESSAGE);
         }
@@ -269,7 +273,7 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void pnlContainerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlContainerMouseEntered
         String contraseña = new String(txtPassword.getPassword());
-        if(this.txtUser.getText().isBlank()){
+        if(this.txtUser.getText().isBlank() || contraseña.isBlank()){
             this.txtUser.setText("Ingrese su nombre de usuario");
             this.txtUser.setForeground(Color.LIGHT_GRAY);
         }
@@ -285,6 +289,14 @@ public class frmLogin extends javax.swing.JFrame {
             this.txtUser.setForeground(Color.black);
         }
     }//GEN-LAST:event_txtUserKeyTyped
+
+    private void txtPasswordKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyTyped
+        String contraseña = new String(txtPassword.getPassword());
+        if(contraseña.equals("12345678")){ 
+            this.txtUser.setText("");
+            this.txtUser.setForeground(Color.black);
+        }
+    }//GEN-LAST:event_txtPasswordKeyTyped
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;

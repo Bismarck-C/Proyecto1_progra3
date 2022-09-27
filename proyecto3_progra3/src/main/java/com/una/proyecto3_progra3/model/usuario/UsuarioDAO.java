@@ -29,7 +29,7 @@ public class UsuarioDAO extends ConnectionDB{
         return this.update(sqlString);
     }
     public boolean update(String[] data) throws Exception{
-        sqlString="UPDATE usuario SET nombre='"+data[1]+"',apellidos='"+data[2]+"' "
+        sqlString="UPDATE usuario SET nombre='"+data[1]+"',apellidos='"+data[2]+"',telefono='"+data[3]+"',correo='"+data[4]+"',usuario='"+data[5]+"',contraseña='"+data[6]+"' "
                 + "WHERE id='"+data[0]+"'";
                 
         return this.update(sqlString);
