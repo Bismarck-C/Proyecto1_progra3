@@ -16,10 +16,10 @@ public class Categoria {
     private Bloque bloque;
     
     
-    public Categoria(String[] data, Bloque bloque){
+    public Categoria(String[] data){
         this.codigo = data[0];
         this.descripcion = data[1];
-        this.bloque = bloque;
+        
         
     
     }

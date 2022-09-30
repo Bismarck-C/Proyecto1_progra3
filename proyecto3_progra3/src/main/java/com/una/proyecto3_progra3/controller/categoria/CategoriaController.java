@@ -8,6 +8,7 @@ import com.una.proyecto3_progra3.model.bloque.Bloque;
 import com.una.proyecto3_progra3.model.bloque.BloqueDAO;
 import com.una.proyecto3_progra3.model.categoria.Categoria;
 import com.una.proyecto3_progra3.model.categoria.CategoriaDAO;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -22,19 +23,20 @@ public class CategoriaController implements CategoriaInterface, BloqueInterface{
     }
     
     @Override
-    public boolean insertar(String[] data, String[] data2) {
-          Bloque bloque = new Bloque(data2);
-        try {
-            BloqueDAO bl = new BloqueDAO();
-            if(bl.store(bloque)){ 
-                Categoria categoria = new Categoria(data, bloque);
-                CategoriaDAO dao = new CategoriaDAO();
-                if(dao.store(categoria)){
-                    return true;
-                }
-                    
-            }
+    public boolean insertar(String[] data, String codigoBloque) {
           
+        try {
+            CategoriaDAO cate = new CategoriaDAO();
+            BloqueDAO bl = new BloqueDAO();
+            Categoria categoria = new Categoria(data);
+            categoria.getBloque().setCodigo(codigoBloque);
+            if(!bl.existBloque(codigoBloque)){
+                if(cate.store(categoria)){ 
+                    return true;
+            
+                } 
+            }
+                   
                 
         } catch (Exception ex) {
            ex.printStackTrace();
@@ -99,7 +101,7 @@ public class CategoriaController implements CategoriaInterface, BloqueInterface{
         
         try {
             BloqueDAO dao = new BloqueDAO();
-            if(dao.store(bl)){
+            if(dao.storeBloque(bl)){
                 return true;
             }
             
@@ -141,6 +143,28 @@ public class CategoriaController implements CategoriaInterface, BloqueInterface{
     @Override
     public void buscarDescipcion(String data) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public ArrayList getAll() {
+        BloqueDAO dao;
+        
+        
+        try {
+             dao = new BloqueDAO();
+             ArrayList<Bloque> list = dao.getAll();
+             
+             if(!list.isEmpty()){
+                 return list;
+             
+             }
+            
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+       
     }
 
  

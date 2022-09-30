@@ -85,9 +85,4 @@ public class CategoriaDAO extends ConnectionDB{
     }
     
     
-    
-    
-   
-  
-    
 }

@@ -5,6 +5,7 @@
 package com.una.proyecto3_progra3.controller.categoria;
 
 import com.una.proyecto3_progra3.model.bloque.Bloque;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,7 @@ public interface BloqueInterface {
     public boolean insertBloque(String[] data);
     public boolean modificarBloque(String[] data);
     public boolean cambiarEstado(String[] estado);
+    public ArrayList getAll();
      
     
 }
