@@ -27,6 +27,7 @@ public class frmMenuBloque extends javax.swing.JFrame {
     public frmMenuBloque() {
         bloque = new CategoriaController();
         initComponents();
+        cargarBox();
         this.setLocationRelativeTo(null);
     }
 
@@ -237,15 +238,15 @@ public class frmMenuBloque extends javax.swing.JFrame {
         panelModificarLayout.setHorizontalGroup(
             panelModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelModificarLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
+                .addGap(44, 44, 44)
                 .addComponent(labelBloque)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(boxBloques, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72)
+                .addGap(78, 78, 78)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panelModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelModificarLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
+                        .addGap(56, 56, 56)
                         .addGroup(panelModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelEstadoActual)
                             .addComponent(labelEstadoActual1))
@@ -263,18 +264,16 @@ public class frmMenuBloque extends javax.swing.JFrame {
         panelModificarLayout.setVerticalGroup(
             panelModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelModificarLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(26, 26, 26)
                 .addGroup(panelModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelBloque)
                     .addComponent(boxBloques, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarLayout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(panelModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelModificarLayout.createSequentialGroup()
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelModificarLayout.createSequentialGroup()
                         .addGroup(panelModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(labelCodigo))
@@ -285,8 +284,8 @@ public class frmMenuBloque extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(panelModificarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelEstadoActual1)
-                            .addComponent(txtNombreActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43))))
+                            .addComponent(txtNombreActual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(43, 43, 43))
         );
 
         jTabbedPane1.addTab("Modificar", panelModificar);
@@ -361,8 +360,8 @@ public class frmMenuBloque extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNewNombre)
                     .addComponent(txtNewNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -458,19 +457,7 @@ public class frmMenuBloque extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEstadoActualActionPerformed
 
     private void boxBloquesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_boxBloquesMouseEntered
-        ArrayList<Bloque> list = bloque.getAll();
-       
-       if(list != null){
-           for (Bloque obj : list) {
-               this.boxBloques.addItem(obj.getNombre());
-               
-           }
-         
-       }else{
-            JOptionPane.showMessageDialog(this, "Error! no hay Bloque creados", "ERROR", JOptionPane.ERROR_MESSAGE);
-       
-       }
-       
+
     }//GEN-LAST:event_boxBloquesMouseEntered
 
     private void panelModificarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelModificarMouseEntered
@@ -484,7 +471,21 @@ public class frmMenuBloque extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_panelModificarMouseEntered
-
+    private void cargarBox(){
+         ArrayList<Bloque> list = bloque.getAll();
+       
+       if(list != null){
+           for (Bloque obj : list) {
+               this.boxBloques.addItem(obj.getNombre());
+               
+           }
+         
+       }else{
+            JOptionPane.showMessageDialog(this, "Error! no hay Bloque creados", "ERROR", JOptionPane.ERROR_MESSAGE);
+       
+       }
+    
+    }
     private void txtCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCodigoActionPerformed

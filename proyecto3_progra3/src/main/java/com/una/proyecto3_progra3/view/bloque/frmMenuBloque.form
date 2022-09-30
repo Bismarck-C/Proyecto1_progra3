@@ -108,8 +108,8 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="labelTitle" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTabbedPane1" min="-2" pref="195" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                  <Component id="jTabbedPane1" min="-2" pref="215" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelNewNombre" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtNewNombre" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -303,15 +303,15 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           <Component id="labelBloque" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="boxBloques" min="-2" pref="136" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                           <Component id="jSeparator1" min="-2" pref="14" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="labelEstadoActual" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="labelEstadoActual1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -336,7 +336,7 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelBloque" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="boxBloques" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -345,12 +345,9 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="20" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jSeparator1" min="-2" pref="119" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jSeparator1" min="-2" pref="119" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="labelCodigo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -365,9 +362,9 @@
                                       <Component id="labelEstadoActual1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="txtNombreActual" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
