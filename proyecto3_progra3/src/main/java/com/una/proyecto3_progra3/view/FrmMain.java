@@ -74,11 +74,10 @@ public class FrmMain extends javax.swing.JFrame {
         panelDeptL = new javax.swing.JPanel();
         labelMostrarDepts = new javax.swing.JLabel();
         PanelCategoria = new javax.swing.JPanel();
-        panelUserR1 = new javax.swing.JPanel();
         panelModificarBloque = new javax.swing.JPanel();
         labelModificarBloque = new javax.swing.JLabel();
         panelInsert1 = new javax.swing.JPanel();
-        labelInsetarBloque1 = new javax.swing.JLabel();
+        labelInsetarBloque = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -169,7 +168,7 @@ public class FrmMain extends javax.swing.JFrame {
                 menuCategoryMouseExited(evt);
             }
         });
-        panelContainerModules.add(menuCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 110, -1));
+        panelContainerModules.add(menuCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 40, 120, -1));
 
         menuProductos.setBackground(java.awt.Color.black);
         menuProductos.setFont(new java.awt.Font("Corbel", 1, 24)); // NOI18N
@@ -552,19 +551,6 @@ public class FrmMain extends javax.swing.JFrame {
             }
         });
 
-        panelUserR1.setBackground(java.awt.Color.black);
-
-        javax.swing.GroupLayout panelUserR1Layout = new javax.swing.GroupLayout(panelUserR1);
-        panelUserR1.setLayout(panelUserR1Layout);
-        panelUserR1Layout.setHorizontalGroup(
-            panelUserR1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        panelUserR1Layout.setVerticalGroup(
-            panelUserR1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
         panelModificarBloque.setBackground(new java.awt.Color(0, 0, 0));
         panelModificarBloque.setForeground(new java.awt.Color(0, 0, 0));
 
@@ -600,18 +586,18 @@ public class FrmMain extends javax.swing.JFrame {
         panelInsert1.setBackground(new java.awt.Color(0, 0, 0));
         panelInsert1.setForeground(new java.awt.Color(0, 0, 0));
 
-        labelInsetarBloque1.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
-        labelInsetarBloque1.setForeground(java.awt.Color.white);
-        labelInsetarBloque1.setText("INSERT. BLOQUE");
-        labelInsetarBloque1.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelInsetarBloque.setFont(new java.awt.Font("Roboto", 1, 13)); // NOI18N
+        labelInsetarBloque.setForeground(java.awt.Color.white);
+        labelInsetarBloque.setText("INSERT. BLOQUE");
+        labelInsetarBloque.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelInsetarBloque1MouseClicked(evt);
+                labelInsetarBloqueMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelInsetarBloque1MouseEntered(evt);
+                labelInsetarBloqueMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                labelInsetarBloque1MouseExited(evt);
+                labelInsetarBloqueMouseExited(evt);
             }
         });
 
@@ -621,15 +607,15 @@ public class FrmMain extends javax.swing.JFrame {
             panelInsert1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInsert1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelInsetarBloque1, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                .addComponent(labelInsetarBloque, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelInsert1Layout.setVerticalGroup(
             panelInsert1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelInsert1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelInsetarBloque1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addComponent(labelInsetarBloque, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PanelCategoriaLayout = new javax.swing.GroupLayout(PanelCategoria);
@@ -637,30 +623,24 @@ public class FrmMain extends javax.swing.JFrame {
         PanelCategoriaLayout.setHorizontalGroup(
             PanelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCategoriaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelUserR1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(PanelCategoriaLayout.createSequentialGroup()
                 .addComponent(panelModificarBloque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 5, Short.MAX_VALUE))
             .addGroup(PanelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCategoriaLayout.createSequentialGroup()
+                .addGroup(PanelCategoriaLayout.createSequentialGroup()
                     .addComponent(panelInsert1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
         );
         PanelCategoriaLayout.setVerticalGroup(
             PanelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCategoriaLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(49, 49, 49)
                 .addComponent(panelModificarBloque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(panelUserR1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(126, Short.MAX_VALUE))
             .addGroup(PanelCategoriaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(PanelCategoriaLayout.createSequentialGroup()
                     .addGap(10, 10, 10)
                     .addComponent(panelInsert1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(165, Short.MAX_VALUE)))
+                    .addContainerGap(170, Short.MAX_VALUE)))
         );
 
         jPanel1.add(PanelCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 120, 210));
@@ -823,6 +803,7 @@ public class FrmMain extends javax.swing.JFrame {
     private void panelContainerModulesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelContainerModulesMouseEntered
         this.panelUserOptions.setVisible(false);
         this.panelDeptOptions.setVisible(false);
+        this.PanelCategoria.setVisible(false);
     }//GEN-LAST:event_panelContainerModulesMouseEntered
 
     private void labelRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegistrarMouseClicked
@@ -842,7 +823,7 @@ public class FrmMain extends javax.swing.JFrame {
 
     private void menuCategoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCategoryMouseEntered
          this.menuCategory.setCursor(new Cursor(Cursor.HAND_CURSOR));
-         this.PanelCategoria.setVisible(true);
+         this.PanelCategoria.setVisible(true); 
     }//GEN-LAST:event_menuCategoryMouseEntered
 
     private void menuCategoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuCategoryMouseExited
@@ -866,15 +847,18 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_menuProductos1MouseExited
 
     private void labelModificarBloqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelModificarBloqueMouseClicked
-        this.panelUserOptions.setVisible(false);
+        this.PanelCategoria.setVisible(false);
         this.bloqueModificar.setVisible(true);
     }//GEN-LAST:event_labelModificarBloqueMouseClicked
 
     private void labelModificarBloqueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelModificarBloqueMouseEntered
+        this.labelInsetarBloque.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.PanelCategoria.setVisible(true);
         this.labelModificarBloque.setForeground(Color.black);
         this.labelModificarBloque.setCursor(new Cursor(Cursor.HAND_CURSOR));
         this.panelModificarBloque.setBackground(Color.white);
+       
+        
     }//GEN-LAST:event_labelModificarBloqueMouseEntered
 
     private void labelModificarBloqueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelModificarBloqueMouseExited
@@ -883,11 +867,12 @@ public class FrmMain extends javax.swing.JFrame {
     }//GEN-LAST:event_labelModificarBloqueMouseExited
 
     private void PanelCategoriaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelCategoriaMouseExited
-        this.panelUserOptions.setVisible(false);
+        this.PanelCategoria.setVisible(false);
     }//GEN-LAST:event_PanelCategoriaMouseExited
 
     private void PanelCategoriaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelCategoriaMouseEntered
-         this.PanelCategoria.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        this.PanelCategoria.setVisible(true);
+         
     }//GEN-LAST:event_PanelCategoriaMouseEntered
 
     private void panelDeptOptionsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelDeptOptionsMouseClicked
@@ -898,17 +883,23 @@ public class FrmMain extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_menuUserFocusGained
 
-    private void labelInsetarBloque1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInsetarBloque1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_labelInsetarBloque1MouseClicked
+    private void labelInsetarBloqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInsetarBloqueMouseClicked
+        this.PanelCategoria.setVisible(false);
+        this.bloqueAgregar.setVisible(true);
+    }//GEN-LAST:event_labelInsetarBloqueMouseClicked
 
-    private void labelInsetarBloque1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInsetarBloque1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_labelInsetarBloque1MouseEntered
+    private void labelInsetarBloqueMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInsetarBloqueMouseEntered
+        this.labelInsetarBloque.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        this.PanelCategoria.setVisible(true);
+        this.labelInsetarBloque.setForeground(Color.black);
+        this.labelInsetarBloque.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        this.panelInsert1.setBackground(Color.white);
+    }//GEN-LAST:event_labelInsetarBloqueMouseEntered
 
-    private void labelInsetarBloque1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInsetarBloque1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_labelInsetarBloque1MouseExited
+    private void labelInsetarBloqueMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelInsetarBloqueMouseExited
+        this.labelInsetarBloque.setForeground(Color.white);
+        this.panelInsert1.setBackground(Color.black);
+    }//GEN-LAST:event_labelInsetarBloqueMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AMD;
@@ -919,7 +910,7 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JLabel labelAgregarDept;
     private javax.swing.JLabel labelDelete;
     private javax.swing.JLabel labelDeleteDept;
-    private javax.swing.JLabel labelInsetarBloque1;
+    private javax.swing.JLabel labelInsetarBloque;
     private javax.swing.JLabel labelModificarBloque;
     private javax.swing.JLabel labelModify;
     private javax.swing.JLabel labelModifyDept;
@@ -943,6 +934,5 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JPanel panelUserM;
     private javax.swing.JPanel panelUserOptions;
     private javax.swing.JPanel panelUserR;
-    private javax.swing.JPanel panelUserR1;
     // End of variables declaration//GEN-END:variables
 }
