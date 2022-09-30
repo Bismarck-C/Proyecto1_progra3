@@ -11,7 +11,7 @@ import com.una.proyecto3_progra3.model.categoria.Categoria;
  * @author villa
  */
 public interface CategoriaInterface {
-    public boolean insertar(String[] data, String[] data1);
+    public boolean insertar(String[] data, String codigoBloque);
     public String modificar(String[] data);
     public Categoria buscarCategoria(String data);
     public void buscarDescipcion(String data);

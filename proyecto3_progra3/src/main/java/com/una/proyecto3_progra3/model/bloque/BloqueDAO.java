@@ -21,7 +21,7 @@ public class BloqueDAO extends ConnectionDB {
         super();
     }
     
-    public boolean store(Bloque bloque)throws Exception{
+    public boolean storeBloque(Bloque bloque)throws Exception{
         sqlString="INSERT INTO bloque(codigo,nombre,estado) "
                 + "VALUES('"+bloque.getCodigo()+"','"+bloque.getNombre()+"','"+bloque.getEstado()+"')";
         
@@ -37,7 +37,7 @@ public class BloqueDAO extends ConnectionDB {
                 +"WHERE codigo='"+data[0]+"'";
         return this.update(sqlString);
     }
-    public ArrayList getALL() throws SQLException, Exception{
+    public ArrayList getAll() throws SQLException, Exception{
         ArrayList<Bloque> list = new ArrayList<>();
         
         sqlString = "SELECT * FROM bloque";
@@ -58,6 +58,12 @@ public class BloqueDAO extends ConnectionDB {
         bl.setEstado(rs.getString("estado"));
         
         return bl;
+    
+    }
+    public boolean existBloque(String codigo) throws Exception{
+           sqlString = "SELECT * FROM bloque WHERE codigo= '"+codigo+"' ";
+           ResultSet rs = (this.query(sqlString));
+        return rs.next();
     
     }
     
